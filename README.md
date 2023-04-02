@@ -41,23 +41,3 @@ func _ready() -> void:
         date.format_day(4),
     ]))
 ```
-
-## Properties
-● int day [default: 0]
-The current day of the month. Can be set either directly or by calling set_day().
-
-
-● int month [default: 0]
-The current month of the year. Can be set either directly or by calling set_month().
-
-
-● int year [default: 0]
-The current year. Can be set either directly or by calling set_year().
-
-
-● int min_year [default: 1000]
-The minimum allowed value for the "year" variable. Can be set either directly or by calling set_min_year().
-
-
-● int max_year [default: 9999]
-The maximum allowed value for the "year" variable. Can be set either directly or by calling set_max_year().

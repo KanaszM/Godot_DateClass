@@ -2,12 +2,6 @@
 The `Date` class is a powerful tool for precise manipulation of `day`, `month`, `year` values. It can set, clamp, increment, and format these values, and also generate calendars and calculate `ISO 8601` day and week numbers.
 
 ## Features
-* Complete GDScript documentation
-* Accurate results
-* Optimized for performance
-* Easy to use
-
-## Description
 ### Overriding Parameters
 Methods that include the parameters `d`, `m`, and `y` allow for the overriding of the `day`, `month`, and `year` values within the class. If any of these arguments are set to an integer value, the corresponding member will be replaced with the provided value. If any of these arguments are left null, the method will use the respective member value. This provides a flexible way to modify specific date components within the method while keeping other components intact.
 
@@ -47,3 +41,23 @@ func _ready() -> void:
         date.format_day(4),
     ]))
 ```
+
+## Properties
+● int day [default: 0]
+The current day of the month. Can be set either directly or by calling set_day().
+
+
+● int month [default: 0]
+The current month of the year. Can be set either directly or by calling set_month().
+
+
+● int year [default: 0]
+The current year. Can be set either directly or by calling set_year().
+
+
+● int min_year [default: 1000]
+The minimum allowed value for the "year" variable. Can be set either directly or by calling set_min_year().
+
+
+● int max_year [default: 9999]
+The maximum allowed value for the "year" variable. Can be set either directly or by calling set_max_year().

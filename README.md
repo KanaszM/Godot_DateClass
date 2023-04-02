@@ -15,3 +15,29 @@ func _ready():
     # Combine the set_day() and set_year() methods to set both the day and year of the date object.
     date.set_day(4).set_year(1991)
 ```
+
+### Formatting Dates
+When using the `format_day()`, `format_month()` or `format_year(`) methods, the `format` parameter can be either a string or an integer, indicating the number of characters in the desired format. For any other format length, the function returns the full name of the day or month.
+
+```godot
+func _ready() -> void:
+    var date: Date = Date.new(1, 1, 2000)
+    # All will print: "Jan"
+    print(date.format_month(3))
+    print(date.format_month("mmm"))
+    print(date.format_month("XyZ"))
+```
+
+The `join_formats()` can then be used to join multiple `format_day()`, `format_month()` or `format_year()` methods regardless of order or quantity.
+
+```godot
+func _ready() -> void:
+    var date: Date = Date.new(10, 11, 2002)
+    # Will print: "2002-10-November-Sun"
+    print(date.join_formats([
+        date.format_year(4),
+        date.format_day(2),
+        date.format_month(4),
+        date.format_day(4),
+    ]))
+```

@@ -3,6 +3,7 @@ The `Date` class is a powerful tool for precise manipulation of `day`, `month`, 
 
 ## Features
 * Complete GDScript documentation
+* Accurate results
 * Optimized for performance
 * Easy to use
 

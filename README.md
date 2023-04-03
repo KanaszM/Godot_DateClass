@@ -35,6 +35,9 @@ for row in calendar:
 ["24", "25", "26", "27", "28", "29", "30"]
 ["  ", "  ", "  ", "  ", "  ", "  ", "  "]
 ```
+
+---
+
 * The method `get_calendar_dict` generates a dictionary representing a calendar month with 42 integer keys, one for each day slot. If a day slot does not correspond to a day in the month, the value of that specific key will be empty, else, the value of that specific key will be a sub-dictionary containing the day number, the row number, the week number, and the weekday number. The weekday number follows the convention where Sunday is represented as 6, Monday as 0, and so on.
 ```javascript
 var date: Date = Date.new(1, 4, 2023) // A date representing April 1, 2023
@@ -63,6 +66,8 @@ for day_idx in calendar:
 ### Overriding Parameters
 Methods that include the parameters `d`, `m`, and `y` allow for the overriding of the `day`, `month`, and `year` values within the class. If any of these arguments are set to an integer value, the corresponding member will be replaced with the provided value. If any of these arguments are left null, the method will use the respective member value. This provides a flexible way to modify specific date components within the method while keeping other components intact.
 
+---
+
 ### Builder Pattern
 Any method that returns a `Date` value will in fact return the same class reference. This enables the use of the builder pattern, allowing for chained method calls to set different components at once.
 
@@ -73,6 +78,8 @@ func _ready():
     // Combine the set_day() and set_year() methods to set both the day and year of the date object.
     date.set_day(4).set_year(1991)
 ```
+
+---
 
 ### Formatting Dates
 When using the `format_day()`, `format_month()` or `format_year(`) methods, the `format` parameter can be either a string or an integer, indicating the number of characters in the desired format. For any other format length, the function returns the full name of the day or month.

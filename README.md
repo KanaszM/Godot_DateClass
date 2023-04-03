@@ -9,15 +9,55 @@ The `Date` class is a powerful tool for precise manipulation of `day`, `month`, 
 ```javascript
 var date_today: Date = Date() // Will create a date with the current date values
 var date_first_of_april_2023: Date = Date(1, 4, 2023) // Will create a date representing the first of April 2023
-````
+```
 * The `day`, `month` or `year` values can be changed by assigning values directly or by calling the `set_day`, `set_month`, `set_year` methods.
 The set values will be automatically clamped, meaning that setting `date.day = 50` will be clamped to the last day of the current `date.month`
 * The `increment_day`, `increment_month`, `increment_year` methods can be used to increment positively if the `mode` parameter is `True` else negatively by the value of `max_iteration` parameter.
 ```javascript
 var date: Date = Date(30, 4, 2023) // A date representing the last of April 2023
 date.increment_day(True, 1) // Will increment the day value by one. The date will now change to represent the first of May 2023
-````
+```
 **Consider the in-engine documentation for more information on the class members and methods.**
+
+## Calendar Generators
+* The method `get_calendar_array2d` generates an array of 6 rows, each row representing a week in the calendar month:
+```javascript
+var date: Date = Date.new(1, 4, 2023) // A date representing April 1, 2023
+var calendar: Array = date.get_calendar_array2d()
+for row in calendar:
+    print(row)
+```
+```
+["  ", "  ", "  ", "  ", "  ", "01", "02"]
+["03", "04", "05", "06", "07", "08", "09"]
+["10", "11", "12", "13", "14", "15", "16"]
+["17", "18", "19", "20", "21", "22", "23"]
+["24", "25", "26", "27", "28", "29", "30"]
+["  ", "  ", "  ", "  ", "  ", "  ", "  "]
+```
+* The method `get_calendar_dict` generates a dictionary representing a calendar month with 42 integer keys, one for each day slot. If a day slot does not correspond to a day in the month, the value of that specific key will be empty, else, the value of that specific key will be a sub-dictionary containing the day number, the row number, the week number, and the weekday number. The weekday number follows the convention where Sunday is represented as 6, Monday as 0, and so on.
+```javascript
+var date: Date = Date.new(1, 4, 2023) // A date representing April 1, 2023
+var calendar: Dictionary = date.get_calendar_dict()
+for day_idx in calendar:
+    print("%d = %s" % [day_idx, calendar[day_idx]])
+```
+```
+0 = {  }
+1 = {  }
+2 = {  }
+3 = {  }
+4 = {  }
+5 = { "day": 1, "row": 0, "week": 13, "weekday": 5 }
+6 = { "day": 2, "row": 0, "week": 13, "weekday": 6 }
+7 = { "day": 3, "row": 1, "week": 14, "weekday": 0 }
+8 = { "day": 4, "row": 1, "week": 14, "weekday": 1 }
+9 = { "day": 5, "row": 1, "week": 14, "weekday": 2 }
+10 = { "day": 6, "row": 1, "week": 14, "weekday": 3 }
+11 = { "day": 7, "row": 1, "week": 14, "weekday": 4 }
+12 = { "day": 8, "row": 1, "week": 14, "weekday": 5 }
+... and so on until 41
+```
 
 ## Features
 ### Overriding Parameters

@@ -17,7 +17,7 @@ The set values will be automatically clamped, meaning that setting `date.day = 5
 var date: Date = Date(30, 4, 2023) // A date representing the last of April 2023
 date.increment_day(True, 1) // Will increment the day value by one. The date will now change to represent the first of May 2023
 ```
-**Consider the in-engine documentation for more information on the class members and methods.**
+> **Consider the in-engine documentation for more information on the class members and methods.**
 
 ## Calendar Generators
 * The method `get_calendar_array2d` generates an array of 6 rows, each row representing a week in the calendar month:

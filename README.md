@@ -3,7 +3,7 @@
 
 The `Date` class is a powerful tool for precise manipulation of `day`, `month`, `year` values. It can set, clamp, increment, and format these values, and also generate calendars and calculate `ISO 8601` day and week numbers.
 
-## How to use
+## How to Use
 1. Place the `Date.gd` file anywhere in your project directory.
 2. Call the `Date(day: int, month: int, year: int)` constructor to create a new `Date` object. If any of these arguments are omitted, they will default to the current day, month, or year.
 ```javascript
@@ -59,3 +59,11 @@ func _ready() -> void:
         date.format_day(4),
     ]))
 ```
+
+## Links and Resources
+Other noteworthy date, time, calendar repositories on GitHub:
+* [Calendar Button Plugin for Godot Engine 3.2.3 by Ivan Skodje](https://github.com/ivanskodje-godotengine/godot-plugin-calendar-button)
+* [Godot Date Time by William Christian - verillious](https://github.com/verillious/godot-datetime)
+* [godot-date by Calinou](https://github.com/Calinou/godot-date)
+
+[And much more...](https://github.com/search?q=godot+date)
